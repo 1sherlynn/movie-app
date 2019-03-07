@@ -11,7 +11,7 @@ export const getTopMovies = (page) => createAsyncActionCreator(
   // actionType
   keys.GET_TOP_MOVIES,
   // requestFn
-  movieService.getTopMoviesRequest, 
+  movieService.getTopMovies, 
   // requestParams
   {page}
 );
