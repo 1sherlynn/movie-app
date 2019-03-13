@@ -1,3 +1,18 @@
+
+## Sherlynn's Movie Application (ReactJs + Redux)
+
+- Use of create-react-app, redux, react-bootstrap, material-ui
+- Redux data-flow
+- Container: movie-browser container, movie-details
+- Components: movie-list component, movie-card component, movie-search component 
+- Retrieve a list of the top movies and render them using the movie list component
+- Retrieve the next page as a user scrolls down (Infinite Scrolling)
+- View the movie details in a modal when a user clicks on a movie
+- Movie-search component 
+
+______________________________________________________
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
