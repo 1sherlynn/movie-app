@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {Card, CardTitle, CardMedia} from 'material-ui';
+import {Card, CardTitle, CardMedia } from 'material-ui';
 import {openMovieModal} from '../movie-modal/movie-modal.actions';
 
 // These are inline styles
@@ -17,7 +17,14 @@ const styles = {
   },
   bgImage: {
     width: '100%'
-  }
+  },
+  cardTitle: {
+    fontSize: 20,
+    // backgroundColor: 'black'
+  },
+  cardSubTitle: {
+    fontSize: 12
+  },
 };
 
 class MovieCardComponent extends React.Component {
@@ -45,7 +52,10 @@ class MovieCardComponent extends React.Component {
           style={styles.cardMedia}
           overlay={
             <CardTitle
+              style={styles.cardTitle}
+              titleStyle={styles.cardTitle}
               title={movie.title} 
+              subtitleStyle={styles.cardSubTitle}
               subtitle={subtitle} 
             />
           }

@@ -48,7 +48,7 @@ class MovieBrowser extends React.Component {
 
     return (
       <div>
-        <AppBar title='Movie Browser' />
+        <AppBar title='Movie Browser' style={{backgroundColor: '#353137'}}/>
         <Container>
           <Row>
             <p>Search will go here</p>
