@@ -1,14 +1,11 @@
 import React from 'react';
+import {connect} from 'react-redux';
 import {Card, CardTitle, CardMedia} from 'material-ui';
+import {openMovieModal} from '../movie-modal/movie-modal.actions';
 
 // These are inline styles
 // You can pass styles as objects using this convention
 const styles = {
-  cardTitle: {
-    whiteSpace: 'nowrap',
-    textOverflow: 'ellipsis',
-    overflow: 'hidden'
-  },
   cardMedia: {
     maxHeight: 394,
     overflow: 'hidden'
@@ -34,7 +31,7 @@ class MovieCardComponent extends React.Component {
   
   render() {
     const {movie, openMovieModal} = this.props;
-    // The subtitle won't render if it's null
+    // The CardTitle.subtitle won't render if it's null
     const subtitle = this.state.isMouseOver ? movie.overview : null;
 
     return (
@@ -42,8 +39,8 @@ class MovieCardComponent extends React.Component {
         style={styles.card}
         onMouseOver={() => this.setState({isMouseOver: true})}
         onMouseLeave={() => this.setState({isMouseOver: false})}
+        onClick= {() => openMovieModal(movie.id)}
       >
-        {/* <CardTitle title={<div style={styles.cardTitle}>{movie.title}</div>} /> */}
         <CardMedia
           style={styles.cardMedia}
           overlay={
@@ -60,4 +57,7 @@ class MovieCardComponent extends React.Component {
   }
 }
 
-export default MovieCardComponent;
+export default connect(
+  () => ({}),
+  { openMovieModal }
+)(MovieCardComponent);
