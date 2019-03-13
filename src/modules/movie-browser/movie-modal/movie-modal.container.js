@@ -10,13 +10,13 @@ import Loader from '../../common/loader.component';
 const styles = {
   // Can use functions to dynamically build our CSS
   dialogContent: (backgroundUrl) => ({
-    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${backgroundUrl})`,
+    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(${backgroundUrl})`,
     backgroundRepeat: 'no-repeat',
-    backgroundSize: '100%',
+    backgroundSize: 'cover',
     height: '100%',
     minHeight: 400,
     color: 'white',
-    padding: 10
+    padding: 30
   })
 }
 
@@ -37,6 +37,7 @@ class MovieModalContainer extends React.Component {
 
     return (
       <Dialog
+        bodyStyle={{padding:'1px'}}
         autoScrollBodyContent={true}
         title={null}
         modal={false}
@@ -45,11 +46,11 @@ class MovieModalContainer extends React.Component {
       >
         <Loader isLoading={isLoading}>
           <div style={styles.dialogContent(movie.backdrop_path)}>
-            <h1>{movie.title}</h1>
-            <h5>{genres}</h5>
+            <h2 className="my-2">{movie.title}</h2>
+            <h5 className="my-3"><i>{genres}</i></h5>
             <p>{movie.overview}</p>
-            <p>Popularity: {movie.popularity}</p>
-            <p>Budget: ${movie.budget}</p>
+            <p><b>Popularity:</b> {movie.popularity}</p>
+            <p><b>Budget:</b> ${movie.budget}</p>
           </div>
         </Loader>
     </Dialog>
