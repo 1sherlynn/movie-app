@@ -19,11 +19,10 @@ const styles = {
     width: '100%'
   },
   cardTitle: {
-    fontSize: 20,
-    // backgroundColor: 'black'
+    fontSize: 20
   },
   cardSubTitle: {
-    fontSize: 12
+    fontSize: 15
   },
 };
 
@@ -52,7 +51,7 @@ class MovieCardComponent extends React.Component {
           style={styles.cardMedia}
           overlay={
             <CardTitle
-              style={styles.cardTitle}
+             style={{backgroundColor: 'rgb(0,0,0,0.7)'}}
               titleStyle={styles.cardTitle}
               title={movie.title} 
               subtitleStyle={styles.cardSubTitle}
